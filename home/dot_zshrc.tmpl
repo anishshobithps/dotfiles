@@ -31,5 +31,20 @@ alias lla="eza -la --icons=auto --git --group-directories-first"
 alias lt="eza --tree --icons=auto --level=2"
 alias cat="bat --paging=never"
 
+fbr() {
+  local branch
+  branch=$(git branch --format='%(refname:short)' | fzf --preview 'git log --oneline --color=always {}') && git switch "$branch"
+}
+
+fe() {
+  local file
+  file=$(git ls-files 2>/dev/null | fzf --preview "$_fzf_preview") && ${=EDITOR} "$file"
+}
+
+fshow() {
+  git log --color=always --format='%C(auto)%h %s %C(dim)%cr' "$@" |
+    fzf --ansi --no-sort --preview 'git show --color=always {1}' --bind 'enter:execute(git show {1} | less -R)'
+}
+
 source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
