@@ -15,6 +15,7 @@ macOS dotfiles managed with [chezmoi](https://www.chezmoi.io/). One command sets
 | mise | Runtime version manager (Node, Python) |
 | fzf, zoxide, fd, ripgrep | Fuzzy finding, smart `cd`, fast search |
 | eza, bat | Modern `ls` and `cat` replacements |
+| bottom, fastfetch | Resource monitor (`btm`) and system info |
 | git-delta | Syntax-highlighted git diffs |
 | zsh-autosuggestions, zsh-syntax-highlighting, zsh-completions | Shell autocomplete stack |
 | AeroSpace | i3-style tiling window manager |
