@@ -4,6 +4,8 @@
 
 macOS dotfiles managed with [chezmoi](https://www.chezmoi.io/). One command sets up a fresh Mac with a signed-commit git config, a modern zsh shell, pinned language runtimes, and a tiling window manager.
 
+<br clear="left" />
+
 ## What's included
 
 | Tool | Role |

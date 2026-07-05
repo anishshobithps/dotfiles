@@ -1,6 +1,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 # {{ include "Brewfile" | sha256sum }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew tap felixkratz/formulae
 brew trust felixkratz/formulae
 brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
