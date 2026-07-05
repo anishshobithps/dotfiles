@@ -13,6 +13,8 @@ brew "jq"
 brew "zsh-completions"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+brew "felixkratz/formulae/borders"
 
 cask "zed"
 cask "raycast"
+cask "nikitabobko/tap/aerospace"
