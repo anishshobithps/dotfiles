@@ -1,5 +1,14 @@
 {{- $name := promptStringOnce . "name" "Full name" -}}
 {{- $email := promptStringOnce . "email" "Git email" -}}
+{{- $zedExtensions := promptStringOnce . "zedExtensions" "Zed extensions to auto-install (comma-separated ids, blank for none)" -}}
+{{- $wakatime := promptBoolOnce . "wakatime" "Enable WakaTime time tracking in Zed" -}}
+{{- $wakatimeKey := "" -}}
+{{- if $wakatime -}}
+{{-   $wakatimeKey = promptStringOnce . "wakatimeKey" "WakaTime API key" -}}
+{{- end -}}
 [data]
 name = {{ $name | quote }}
 email = {{ $email | quote }}
+zedExtensions = {{ $zedExtensions | quote }}
+wakatime = {{ $wakatime }}
+wakatimeKey = {{ $wakatimeKey | quote }}

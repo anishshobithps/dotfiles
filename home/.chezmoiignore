@@ -1,1 +1,4 @@
 Brewfile
+{{ if not .wakatime }}
+.wakatime.cfg
+{{ end }}

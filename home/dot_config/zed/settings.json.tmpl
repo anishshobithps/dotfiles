@@ -1,0 +1,11 @@
+{{- $auto := dict -}}
+{{- range splitList "," .zedExtensions -}}
+{{-   $e := trim . -}}
+{{-   if $e }}{{ $_ := set $auto $e true }}{{ end -}}
+{{- end -}}
+{{- if .wakatime }}{{ $_ := set $auto "wakatime" true }}{{ end -}}
+{
+  "theme": "Tokyo Night",
+  "icon_theme": "Catppuccin Mocha",
+  "auto_install_extensions": {{ $auto | toJson }}
+}
